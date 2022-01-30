@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
-        <p>Hello i am back and start work again (Just Test Git )</p>
+        <p style={{color:'red'}}>Hello i am back and start work again (Just Test Git )</p>
         <span>
           <span>Learn </span>
           <a
