@@ -4,8 +4,8 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className='me-5'>
-            <Navbar bg="" expand="lg">
+        <div >
+            <Navbar className='me-5'  bg="" expand="lg">
   <Container fluid>
     <Nav.Link > <img className='mx-auto d-block ' width='30%' src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" /> </Nav.Link>
     
@@ -34,12 +34,25 @@ const Header = () => {
         </Nav.Link>
         <Nav.Link style={{marginLeft:'-20px'}}> <span className='fw-bolder text-dark'>0</span></Nav.Link>
         <Nav.Link className="ms-2"> <span className='fw-bolder text-dark'> <Button variant="success"className=''>LogIn</Button></span></Nav.Link>
-        
       </Nav>
-    
     </Navbar.Collapse>
   </Container>
 </Navbar>
+
+<Navbar className='container ' style={{marginBottom:'-5px', borderRadius:'20px' }} bg="light" variant="light">
+    <Container>
+    <Nav className="me-auto ms-5 mx-auto ps-5">
+      <Nav.Link className='ms-5 fw-bolder' href="#home">Home</Nav.Link>
+      <Nav.Link  className='ms-5 fw-bolder' href="#features">Features</Nav.Link>
+      <Nav.Link  className='ms-5 fw-bolder' href="#about">About Us</Nav.Link>
+      <Nav.Link className='ms-5 fw-bolder' href="#contact"> Contact Us </Nav.Link>
+      <Nav.Link className='ms-5 fw-bolder' href="#product"> All Products</Nav.Link>
+      <Nav.Link className='ms-5 fw-bolder' href="#support">Support Team</Nav.Link>
+      
+    </Nav>
+    </Container>
+  </Navbar>
+  
         </div>
     );
 };
