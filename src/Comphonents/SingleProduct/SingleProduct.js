@@ -8,8 +8,9 @@ const SingleProduct = (props) => {
             <div className="single-product">
                 <img className='img-fluid' src={image} alt="" />
                 <h2>{name}</h2>
-                <h3>{tagName}</h3>
+                <h5>{tagName}</h5>
                 <Rating
+                className='text-warning'
                     initialRating={star}
                     emptySymbol="far fa-star fa-2x"
                     fullSymbol="fas fa-star fa-2x"

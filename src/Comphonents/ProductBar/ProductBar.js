@@ -5,14 +5,14 @@ import './ProductBar.css';
 
 const ProductBar = () => {
     return (
-        <nav className='bg-primary rounded'>
-            <Link className='text-white' to='/supplements'>Supplements</Link>{' '}
-            <Link className='text-white' to='/fruits'>Fruits</Link>{' '}
-            <Link className='text-white' to='/beverages'>Beverages</Link>{' '}
-            <Link className='text-white' to='/dried'>Dried</Link>{' '}
-            <Link className='text-white' to='/juice'>Juice</Link>{' '}
-            <Link className='text-white' to='/meat'>Meat</Link>{' '}
-            <Link className='text-white' to='/food'>Food</Link>{' '}
+        <nav className='navbar justify-content-around bg-primary rounded mt-3'>
+            <Link className='text-white' to='/supplements'><button className='btn text-white'>Supplements</button></Link>{' '}
+            <Link className='text-white' to='/fruits'><button className='btn text-white'>Fruits</button></Link>{' '}
+            <Link className='text-white' to='/beverages'><button className='btn text-white'>Beverages</button></Link>{' '}
+            <Link className='text-white' to='/dried'><button className='btn text-white'>Dried</button></Link>{' '}
+            <Link className='text-white' to='/juice'><button className='btn text-white'>Juice</button></Link>{' '}
+            <Link className='text-white' to='/meat'><button className='btn text-white'>Meat</button></Link>{' '}
+            <Link className='text-white' to='/food'><button className='btn text-white'>Food</button></Link>{' '}
         </nav>
     );
 };
