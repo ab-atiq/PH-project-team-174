@@ -5,6 +5,24 @@ import './Header.css'
 const Header = () => {
     return (
         <div >
+
+<Navbar  bg="light" variant="light">
+   <marquee> <span className='text-success'>UP TO 20% DISCOUNT  BLACK FRIDAY !!! HURRY UP !!! EASY SHOPPING  AND 🎈🎈🎈🎈 HAPPY SHOPPING 🎈🎈🎈🎈 </span></marquee>
+  </Navbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <Navbar className='me-5'  bg="" expand="lg">
   <Container fluid>
     <Nav.Link > <img className='mx-auto d-block ' width='30%' src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" /> </Nav.Link>
