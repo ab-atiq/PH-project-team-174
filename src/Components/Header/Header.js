@@ -1,17 +1,18 @@
 import React from 'react';
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import './Header.css'
 
 const Header = () => {
     return (
         <div className='me-5'>
             <Navbar bg="" expand="lg">
   <Container fluid>
-    <Nav.Link > <img className='mx-auto d-block' width='30%' src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" /> </Nav.Link>
+    <Nav.Link > <img className='mx-auto d-block ' width='30%' src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" /> </Nav.Link>
     
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
         
-    <Form className="d-flex w-75 p-2">
+    <Form className="d-flex w-75 ">
         <FormControl
           type="search"
           placeholder="Search"
@@ -26,19 +27,14 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1">Home</Nav.Link>
-        <Nav.Link href="#action2">Link</Nav.Link>
-        <NavDropdown title="Link" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action5">
-            Something else here
-          </NavDropdown.Item>
-        </NavDropdown>
-        <Nav.Link href="#" disabled>
-          Link
+        <Nav.Link href="#action1"> <i class="fas fa-all fa-user"></i></Nav.Link>
+        <Nav.Link href="#action2"> <span className='fw-bolder text-dark'>Hello,</span></Nav.Link>
+        <Nav.Link href="#" >
+        <i class="fas  fa-all fa-cart-arrow-down"> </i>
         </Nav.Link>
+        <Nav.Link style={{marginLeft:'-20px'}}> <span className='fw-bolder text-dark'>0</span></Nav.Link>
+        <Nav.Link className="ms-2"> <span className='fw-bolder text-dark'> <Button variant="success"className=''>LogIn</Button></span></Nav.Link>
+        
       </Nav>
     
     </Navbar.Collapse>
