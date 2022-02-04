@@ -11,6 +11,7 @@ import Meat from './Comphonents/Meat/Meat';
 import Food from './Comphonents/Food/Food';
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
+import Register from "./Components/Register/Register";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={< Home/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register/>} />
           <Route path='supplements' element={<Supplements />} />
           <Route path='fruits' element={<Fruits />} />
           <Route path='beverages' element={<Beverages />} />
