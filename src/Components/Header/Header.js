@@ -1,18 +1,16 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import Navber from './Navber';
 
 const Header = () => {
     return (
-        <div >
+        < >
 
 <Navbar  bg="light" variant="light">
    <marquee> <span className='text-success'>UP TO 20% DISCOUNT  BLACK FRIDAY !!! HURRY UP !!! EASY SHOPPING  AND 🎈🎈🎈🎈 HAPPY SHOPPING 🎈🎈🎈🎈 </span></marquee>
   </Navbar>
-
-
-
 
             <Navbar className='me-5'  bg="" expand="lg">
   <Container fluid>
@@ -46,10 +44,11 @@ const Header = () => {
       </Nav>
     </Navbar.Collapse>
   </Container>
-</Navbar>
-
-  
-        </div>
+        </Navbar>
+        
+<Navber></Navber>
+        
+        </>
     );
 };
 
