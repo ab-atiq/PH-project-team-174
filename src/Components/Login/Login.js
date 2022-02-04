@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -7,8 +8,8 @@ const Login = () => {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6">
-                        <h2 className="my-5"> LogIn </h2>
-                        <Form className=" shadow-lg p-3 mb-5 bg-white rounded   py-5">
+                        <h2 className="my-4"> Log-In </h2>
+                        <Form className=" shadow-lg   bg-white rounded   py-5">
                             <Form.Group className="mb-4 " controlId="formBasicEmail">
                                 <Form.Control className="  w-75 mx-auto" type="email" placeholder="Enter email" />
                             </Form.Group>
@@ -17,9 +18,12 @@ const Login = () => {
                                 <Form.Control className="mb-4 w-75 mx-auto" type="password" placeholder="Password" />
                             </Form.Group>
 
-                            <Button className="w-50" style={{backgroundColor:'#53c28b', color:'#fff'}} variant="" type="submit">
-                                Submit
+                            <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">
+                                LogIn
                             </Button>
+                            <br />
+                            <br />
+                           <p>If you are new please <Link className="ms-3" to="/register">Register Here </Link></p> 
                         </Form>
 
                     </div>
