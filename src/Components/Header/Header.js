@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
@@ -9,16 +10,6 @@ const Header = () => {
 <Navbar  bg="light" variant="light">
    <marquee> <span className='text-success'>UP TO 20% DISCOUNT  BLACK FRIDAY !!! HURRY UP !!! EASY SHOPPING  AND 🎈🎈🎈🎈 HAPPY SHOPPING 🎈🎈🎈🎈 </span></marquee>
   </Navbar>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -51,25 +42,12 @@ const Header = () => {
         <i class="fas  fa-all fa-cart-arrow-down"> </i>
         </Nav.Link>
         <Nav.Link style={{marginLeft:'-20px'}}> <span className='fw-bolder text-dark'>0</span></Nav.Link>
-        <Nav.Link className="ms-2"> <span className='fw-bolder text-dark'> <Button variant="success"className=''>LogIn</Button></span></Nav.Link>
+        <Link to="/login" className="ms-2 my-2"> <span className='fw-bolder text-dark'> <Button variant="success"className=''>LogIn</Button></span></Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
 </Navbar>
 
-<Navbar className='container ' style={{marginBottom:'-5px', borderRadius:'20px' }} bg="light" variant="light">
-    <Container>
-    <Nav className="me-auto ms-5 mx-auto ps-5">
-      <Nav.Link className='ms-5 fw-bolder' href="#home">Home</Nav.Link>
-      <Nav.Link  className='ms-5 fw-bolder' href="#features">Features</Nav.Link>
-      <Nav.Link  className='ms-5 fw-bolder' href="#about">About Us</Nav.Link>
-      <Nav.Link className='ms-5 fw-bolder' href="#contact"> Contact Us </Nav.Link>
-      <Nav.Link className='ms-5 fw-bolder' href="#product"> All Products</Nav.Link>
-      <Nav.Link className='ms-5 fw-bolder' href="#support">Support Team</Nav.Link>
-      
-    </Nav>
-    </Container>
-  </Navbar>
   
         </div>
     );
