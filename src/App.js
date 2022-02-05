@@ -12,7 +12,7 @@ import Food from './Comphonents/Food/Food';
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
-
+import Cart from "./Components/Cart/Cart";
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/home" element={< Home/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />

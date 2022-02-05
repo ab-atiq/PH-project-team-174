@@ -3,8 +3,11 @@ import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from '
 import { Link } from 'react-router-dom';
 import './Header.css'
 import Navber from './Navber';
+import {useSelector} from 'react-redux';
+
 
 const Header = () => {
+  const cart = useSelector(state => state.cart.cart);
     return (
         < >
 
@@ -36,10 +39,10 @@ const Header = () => {
       >
         <Nav.Link href="#action1"> <i class="fas fa-all fa-user"></i></Nav.Link>
         <Nav.Link href="#action2"> <span className='fw-bolder text-dark'>Hello,</span></Nav.Link>
-        <Nav.Link href="#" >
+        <Nav.Link as={Link} to="/cart" >
         <i class="fas  fa-all fa-cart-arrow-down"> </i>
         </Nav.Link>
-        <Nav.Link style={{marginLeft:'-20px'}}> <span className='fw-bolder text-dark'>0</span></Nav.Link>
+        <Nav.Link style={{marginLeft:'-20px'}}> <span className='fw-bolder text-dark'>{cart.length}</span></Nav.Link>
         <Link to="/login" className="ms-2 my-2"> <span className='fw-bolder text-dark'> <Button variant="success"className=''>LogIn</Button></span></Link>
       </Nav>
     </Navbar.Collapse>
