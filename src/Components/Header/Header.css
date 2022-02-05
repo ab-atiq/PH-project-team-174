@@ -1,0 +1,18 @@
+.fa-all{
+    background-color: #deefc4;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 28px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: #347758;
+    font-size: 16px;
+    margin-right: 10px;
+    padding: 15px;
+    transition: border-radius .4s ease;
+}
+.fa-all:hover{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
