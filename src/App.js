@@ -15,6 +15,7 @@ import Register from "./Components/Register/Register";
 import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
+import NotFound from "./Components/NotFound/NotFound";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/home" element={< Home/>} />
+          <Route exact path="/home" element={< Home/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='supplements' element={<Supplements />} />
@@ -35,10 +36,12 @@ function App() {
           <Route path='juice' element={<Juice />} />
           <Route path='meat' element={<Meat />} />
           <Route path='food' element={<Food />} />
+          <Route path='review' element={<CoustomerReview />} />
+          <Route path='*' element={<NotFound />} />
           {/* <Route path='footer' element={<Footer />} /> */}
           
         </Routes>
-        <CoustomerReview></CoustomerReview>
+        {/* <CoustomerReview></CoustomerReview> */}
         <Footer></Footer>
       </BrowserRouter>
     </div>
