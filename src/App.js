@@ -13,6 +13,8 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
 import Cart from "./Components/Cart/Cart";
+import Footer from "./Components/Footer/Footer";
+import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
 
 
 function App() {
@@ -33,8 +35,11 @@ function App() {
           <Route path='juice' element={<Juice />} />
           <Route path='meat' element={<Meat />} />
           <Route path='food' element={<Food />} />
+          {/* <Route path='footer' element={<Footer />} /> */}
           
         </Routes>
+        <CoustomerReview></CoustomerReview>
+        <Footer></Footer>
       </BrowserRouter>
     </div>
   );
