@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Alert, Button, Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Context/AuthProvider/useAuth';
 
@@ -7,13 +7,13 @@ const Register = () => {
 
 
     const [registerData, setRegisterData] = useState({});
-    const { registerUser } = useAuth();
+    const { registerUser, isLoading, error } = useAuth();
 
     const RegisterUserData = (e) => {
-        
+
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = {...registerData};
+        const newLoginData = { ...registerData };
         newLoginData[field] = value;
         setRegisterData(newLoginData);
         console.log(field, value);
@@ -21,15 +21,15 @@ const Register = () => {
     }
 
     const RegisterFromData = (e) => {
-        
-        registerUser(registerData.email, registerData.password);
-       
-        alert('sdlkfsdkf')
+
+        registerUser(registerData.email, registerData.password, registerData.name);
+
         e.preventDefault();
     }
 
-    
-    
+
+
+    const [show, setShow] = useState(true);
 
 
 
@@ -37,44 +37,54 @@ const Register = () => {
     return (
         <div>
             <div className="container mt-5">
-                <div className="row">
+                {isLoading && <Spinner className="mx-auto" animation="grow" />}
+                <div className="row my-5">
                     <div className="col-md-6">
                         <h2 className="my-4"> Register </h2>
-                        <Form onSubmit={RegisterFromData} className=" shadow-lg   bg-white rounded   py-5">
+                        {
+                            !isLoading &&
+                            <Form onSubmit={RegisterFromData} className=" shadow-lg   bg-white rounded   py-5">
 
-                            {/* <Form.Group className="mb-4 " controlId="formBasicEmail">
-                                <Form.Control className="  w-75 mx-auto"
-                                    type="text"
-                                    name="name"
-                                    onBlur={RegisterUserData}
+                                <Form.Group className="mb-4 " controlId="formBasicEmail">
+                                    <Form.Control className="  w-75 mx-auto"
+                                        type="text"
+                                        name="name"
+                                        onBlur={RegisterUserData}
 
-                                    placeholder="Your Name" />
-                            </Form.Group> */}
+                                        placeholder="Your Name" />
+                                </Form.Group>
 
-                            <Form.Group className="mb-4 " controlId="formBasicEmail">
-                                <Form.Control className="  w-75 mx-auto"
-                                    type="email"
-                                    name="email"
-                                    onBlur={RegisterUserData}
-                                    placeholder="Enter email" />
-                            </Form.Group>
+                                <Form.Group className="mb-4 " controlId="formBasicEmail">
+                                    <Form.Control className="  w-75 mx-auto"
+                                        type="email"
+                                        name="email"
+                                        onBlur={RegisterUserData}
+                                        placeholder="Enter email" />
+                                </Form.Group>
 
-                            <Form.Group className="mb-3 " controlId="formBasicPassword">
-                                <Form.Control className="mb-4 w-75 mx-auto"
-                                    type="password"
-                                    name="password"
-                                    onBlur={RegisterUserData}
-                                
-                                    placeholder="Password" />
-                            </Form.Group>
+                                <Form.Group className="mb-3 " controlId="formBasicPassword">
+                                    <Form.Control className="mb-4 w-75 mx-auto"
+                                        type="password"
+                                        name="password"
+                                        onBlur={RegisterUserData}
 
-                            <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">
-                                Register
-                            </Button>
-                            <br />
-                            <br />
-                            <p>Already Register <Link className="ms-3" to="/login">Log-In Here </Link></p>
-                        </Form>
+                                        placeholder="Password" />
+                                </Form.Group>
+
+                                <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">
+                                    Register
+                                </Button>
+                                <br />
+                                <br />
+                                <p>Already Register <Link className="ms-3" to="/login">Log-In Here </Link></p>
+
+                                {error &&
+                                    <Alert.Link className="text-danger" ><p>{error}</p></Alert.Link>
+                                }
+
+                            </Form>
+                        }
+
 
                     </div>
                     <div className="col-md-6">
