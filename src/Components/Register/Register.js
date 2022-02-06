@@ -1,26 +1,71 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Context/AuthProvider/useAuth';
 
 const Register = () => {
+
+
+    const [registerData, setRegisterData] = useState({});
+    const { registerUser } = useAuth();
+
+    const RegisterUserData = (e) => {
+        
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = {...registerData};
+        newLoginData[field] = value;
+        setRegisterData(newLoginData);
+        console.log(field, value);
+
+    }
+
+    const RegisterFromData = (e) => {
+        
+        registerUser(registerData.email, registerData.password);
+       
+        alert('sdlkfsdkf')
+        e.preventDefault();
+    }
+
+    
+    
+
+
+
+
     return (
         <div>
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6">
                         <h2 className="my-4"> Register </h2>
-                        <Form className=" shadow-lg   bg-white rounded   py-5">
+                        <Form onSubmit={RegisterFromData} className=" shadow-lg   bg-white rounded   py-5">
+
+                            {/* <Form.Group className="mb-4 " controlId="formBasicEmail">
+                                <Form.Control className="  w-75 mx-auto"
+                                    type="text"
+                                    name="name"
+                                    onBlur={RegisterUserData}
+
+                                    placeholder="Your Name" />
+                            </Form.Group> */}
 
                             <Form.Group className="mb-4 " controlId="formBasicEmail">
-                                <Form.Control className="  w-75 mx-auto" type="email" placeholder="Your Name" />
-                            </Form.Group>
-
-                            <Form.Group className="mb-4 " controlId="formBasicEmail">
-                                <Form.Control className="  w-75 mx-auto" type="email" placeholder="Enter email" />
+                                <Form.Control className="  w-75 mx-auto"
+                                    type="email"
+                                    name="email"
+                                    onBlur={RegisterUserData}
+                                    placeholder="Enter email" />
                             </Form.Group>
 
                             <Form.Group className="mb-3 " controlId="formBasicPassword">
-                                <Form.Control className="mb-4 w-75 mx-auto" type="password" placeholder="Password" />
+                                <Form.Control className="mb-4 w-75 mx-auto"
+                                    type="password"
+                                    name="password"
+                                    onBlur={RegisterUserData}
+                                
+                                    placeholder="Password" />
                             </Form.Group>
 
                             <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">

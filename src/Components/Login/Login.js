@@ -1,21 +1,56 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from 'react';
+import useAuth from "../../Context/AuthProvider/useAuth";
 
 const Login = () => {
+
+    const [loginData, setLoginData] = useState({});
+    const { LogIn } = useAuth();
+
+    const LoginUserData = (e) => {
+        
+        const field = e.target.name;
+        const value = e.target.value;
+        const newField = {...loginData};
+        newField[field] = value;
+        setLoginData(newField);
+
+    }
+
+    const LoginFromData = (e) => {
+        
+        LogIn(loginData.email, loginData.password)
+      
+        e.preventDefault();
+    }
+
+
+
+
+
     return (
         <div>
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6">
                         <h2 className="my-4"> Log-In </h2>
-                        <Form className=" shadow-lg   bg-white rounded   py-5">
+                        <Form onSubmit={LoginFromData} className=" shadow-lg   bg-white rounded   py-5">
                             <Form.Group className="mb-4 " controlId="formBasicEmail">
-                                <Form.Control className="  w-75 mx-auto" type="email" placeholder="Enter email" />
+                                <Form.Control className="  w-75 mx-auto"
+                                    name="email"
+                                    type="email"
+                                    onBlur={LoginUserData}
+                                    placeholder="Enter email" />
                             </Form.Group>
 
                             <Form.Group className="mb-3 " controlId="formBasicPassword">
-                                <Form.Control className="mb-4 w-75 mx-auto" type="password" placeholder="Password" />
+                                <Form.Control className="mb-4 w-75 mx-auto"
+                                    type="password"
+                                    name="password"
+                                    onBlur={LoginUserData}
+                                    placeholder="Password" />
                             </Form.Group>
 
                             <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">

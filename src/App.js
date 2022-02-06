@@ -13,29 +13,33 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
 import Cart from "./Components/Cart/Cart";
+import AuthProvider from "./Context/AuthProvider/AuthProvider";
+
 
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
         <BrowserRouter>
-        <Header></Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/home" element={< Home/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/register' element={<Register/>} />
-          <Route path='supplements' element={<Supplements />} />
-          <Route path='fruits' element={<Fruits />} />
-          <Route path='beverages' element={<Beverages />} />
-          <Route path='dried' element={<Dried />} />
-          <Route path='juice' element={<Juice />} />
-          <Route path='meat' element={<Meat />} />
-          <Route path='food' element={<Food />} />
-          
-        </Routes>
-      </BrowserRouter>
+          <Header></Header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/home" element={< Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='supplements' element={<Supplements />} />
+            <Route path='fruits' element={<Fruits />} />
+            <Route path='beverages' element={<Beverages />} />
+            <Route path='dried' element={<Dried />} />
+            <Route path='juice' element={<Juice />} />
+            <Route path='meat' element={<Meat />} />
+            <Route path='food' element={<Food />} />
+
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

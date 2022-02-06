@@ -25,12 +25,12 @@ const SingleProduct = (props) => {
                     <button className='btn-primary p-2 rounded' onClick={() => {
                         dispatch(addToCart(props.product))
                     }} >
-                        <i class="fas fa-cart-plus fa-2x"></i>
+                        <i className="fas fa-cart-plus fa-2x"></i>
                     </button>
                     <br />
                     <br />
                     <button className='btn-primary p-2 rounded'>
-                        <i class="far fa-eye fa-2x"></i>
+                        <i className="far fa-eye fa-2x"></i>
                     </button>
                 </div>
             </div>
