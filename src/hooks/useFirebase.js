@@ -12,9 +12,9 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const provider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name, location, navigate) => {
+    const registerUser = (email, password,  location, navigate) => {
         setIsLoading(true);
-        createUserWithEmailAndPassword(auth, email, password, name)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
                 navigate(destination);
@@ -44,21 +44,10 @@ const useFirebase = () => {
     const googleSignIn = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                // ...
+                setUser(result);
+
             }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
+                setError(error.message);
             });
     }
 
@@ -92,9 +81,9 @@ const useFirebase = () => {
 
     return {
         user,
+        googleSignIn,
         registerUser,
         logOut,
-        googleSignIn,
         LogIn,
         isLoading,
         error,

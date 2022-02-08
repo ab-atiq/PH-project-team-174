@@ -7,7 +7,7 @@ import useAuth from "../../Context/AuthProvider/useAuth";
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { LogIn, isLoading, error, googleSignIn } = useAuth();
+    const {googleSignIn, LogIn, isLoading, error } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 

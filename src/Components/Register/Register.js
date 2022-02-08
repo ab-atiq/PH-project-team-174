@@ -7,7 +7,7 @@ const Register = () => {
 
 
     const [registerData, setRegisterData] = useState({});
-    const { registerUser, isLoading, error } = useAuth();
+    const { registerUser, isLoading, error,googleSignIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const Register = () => {
 
     const RegisterFromData = (e) => {
 
-        registerUser(registerData.email, registerData.password, registerData.name ,location ,navigate);
+        registerUser(registerData.email, registerData.password, location ,navigate);
 
         e.preventDefault();
     }
@@ -90,7 +90,7 @@ const Register = () => {
                     </div>
                     <div className="col-md-6">
                         <img className="w-100 mt-5" src="https://i.ibb.co/X7HbLJL/green-white-digital-marketing-class-website-1.png" alt="" />
-                        <Button className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
+                        <Button onClick={googleSignIn} className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
                             <i className="fab text-warning fa-google"></i> Login With Google
                         </Button>
                     </div>
