@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Alert, Button, Form, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Context/AuthProvider/useAuth';
 
 const Register = () => {
@@ -8,9 +8,10 @@ const Register = () => {
 
     const [registerData, setRegisterData] = useState({});
     const { registerUser, isLoading, error } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const RegisterUserData = (e) => {
-
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...registerData };
@@ -22,14 +23,14 @@ const Register = () => {
 
     const RegisterFromData = (e) => {
 
-        registerUser(registerData.email, registerData.password, registerData.name);
+        registerUser(registerData.email, registerData.password, registerData.name ,location ,navigate);
 
         e.preventDefault();
     }
 
 
 
-    const [show, setShow] = useState(true);
+    // const [show, setShow] = useState(true);
 
 
 

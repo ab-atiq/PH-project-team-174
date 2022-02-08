@@ -14,6 +14,7 @@ import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
 import Cart from "./Components/Cart/Cart";
 import AuthProvider from "./Context/AuthProvider/AuthProvider";
+import Feature from "./Components/Feature/Feature";
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/home" element={< Home />} />
+            <Route path="/feature" element={ < Feature /> } />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='supplements' element={<Supplements />} />

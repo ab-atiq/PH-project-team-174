@@ -1,33 +1,28 @@
 import React from "react";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import useAuth from "../../Context/AuthProvider/useAuth";
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { LogIn, isLoading, error } = useAuth();
+    const { LogIn, isLoading, error, googleSignIn } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const LoginUserData = (e) => {
-
         const field = e.target.name;
         const value = e.target.value;
         const newField = { ...loginData };
         newField[field] = value;
         setLoginData(newField);
-
     }
 
     const LoginFromData = (e) => {
-
-        LogIn(loginData.email, loginData.password)
-
+        LogIn(loginData.email, loginData.password,location,navigate)
         e.preventDefault();
     }
-
-
-
 
 
     return (
@@ -58,6 +53,7 @@ const Login = () => {
                                 <Button className="w-75" style={{ backgroundColor: '#53c28b', color: '#fff' }} variant="" type="submit">
                                     LogIn
                                 </Button>
+                                
                                 <br />
                                 <br />
                                 <p>If you are new please <Link className="ms-3" to="/register">Register Here </Link></p>
@@ -71,7 +67,8 @@ const Login = () => {
                     </div>
                     <div className="col-md-6">
                         <img className="w-100 mt-5" src="https://i.ibb.co/X7HbLJL/green-white-digital-marketing-class-website-1.png" alt="" />
-                        <Button className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
+                        <Button onClick={googleSignIn} className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
+    
                             <i className="fab text-warning fa-google"></i> Login With Google
                         </Button>
                     </div>

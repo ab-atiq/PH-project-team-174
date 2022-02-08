@@ -11,7 +11,7 @@ const Navber = () => {
     <Nav className="me-auto ms-5 mx-auto ps-5">
       <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/home">Home</Link>
    
-              <Link style={{ color: 'green' }} className='ms-5 text-decoration-none py-2 fw-bolder' to="/">Features</Link>
+              <Link style={{ color: 'green' }} className='ms-5 text-decoration-none py-2 fw-bolder' to="/feature">Features</Link>
               
    
       <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/home">About Us</Link>
