@@ -16,7 +16,7 @@ const Navber = () => {
    
       <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/home">About Us</Link>
   
-      <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/home">Contact Us</Link>
+      <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/contact">Contact Us</Link>
   
       <Link style={{color:'green'}} className='ms-5 text-decoration-none py-2 fw-bolder' to="/home">All Products</Link>
      

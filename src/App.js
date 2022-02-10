@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header/Header";
 import './App.css';
+import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Supplements from './Comphonents/Supplements/Supplements';
 import Fruits from './Comphonents/Fruits/Fruits';
@@ -16,6 +17,7 @@ import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
 import NotFound from "./Components/NotFound/NotFound";
+import Contact from "./Components/Contact/Contact";
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route exact path="/home" element={< Home/>} />
+          <Route path="/contact" element={< Contact/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='supplements' element={<Supplements />} />
