@@ -7,9 +7,10 @@ InitializeFirebase();
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
-    const auth = getAuth();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
+
+    const auth = getAuth();
     const provider = new GoogleAuthProvider();
 
     const registerUser = (email, password,  location, navigate) => {
@@ -26,6 +27,8 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
+    
+
     const LogIn = (email, password, location, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
@@ -41,9 +44,9 @@ const useFirebase = () => {
     };
 
 
-    const googleSignIn = () => {
+    const signInUsingGoogle = (location, navigate) => {
         signInWithPopup(auth, provider)
-            .then((result) => {
+            .then(result => {
                 setUser(result);
 
             }).catch((error) => {
@@ -81,7 +84,7 @@ const useFirebase = () => {
 
     return {
         user,
-        googleSignIn,
+        signInUsingGoogle,
         registerUser,
         logOut,
         LogIn,

@@ -19,7 +19,7 @@ const Header = () => {
 
       <Navbar className='me-5' bg="" expand="lg">
         <Container fluid>
-          <Nav.Link > <img className='mx-auto d-block ' width='30%' src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" /> </Nav.Link>
+          <Nav.Link > <img className='mx-auto d-block ' width='75%' src="https://i.ibb.co/8xnxJnZ/DHAKA-2.png" alt="" /> </Nav.Link>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
