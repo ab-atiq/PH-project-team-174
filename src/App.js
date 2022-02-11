@@ -15,6 +15,7 @@ import Register from "./Components/Register/Register";
 import Cart from "./Components/Cart/Cart";
 import AuthProvider from "./Context/AuthProvider/AuthProvider";
 import Feature from "./Components/Feature/Feature";
+import AddService from "./Components/AddService/AddService";
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/home" element={< Home />} />
             <Route path="/feature" element={ < Feature /> } />
             <Route path='/login' element={<Login />} />
+            <Route path='/addService' element={<AddService />} />
             <Route path='/register' element={<Register />} />
             <Route path='supplements' element={<Supplements />} />
             <Route path='fruits' element={<Fruits />} />
