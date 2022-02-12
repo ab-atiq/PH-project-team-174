@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signOut,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
+    updateProfile,
+  } from "firebase/auth";
+
 import InitializeFirebase from "../Components/Firebase/InitializeFirebase";
 
 
 InitializeFirebase();
+
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
@@ -11,12 +22,28 @@ const useFirebase = () => {
     const [error, setError] = useState('');
 
     const auth = getAuth();
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password,  location, navigate) => {
+    const registerUser = (email, password, name, location, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                const newUser = { email: email, displayName: name }
+                setUser(newUser)
+
+                // Send name data firebase
+
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                }).then(() => {
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+
+
                 const destination = location?.state?.from || '/';
                 navigate(destination);
                 setError('')
@@ -27,7 +54,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
-    
+
 
     const LogIn = (email, password, location, navigate) => {
         setIsLoading(true)
@@ -44,24 +71,38 @@ const useFirebase = () => {
     };
 
 
-    const signInUsingGoogle = (location, navigate) => {
-        signInWithPopup(auth, provider)
-            .then(result => {
-                setUser(result);
+    // const signInUsingGoogle = (location, navigate) => {
+    //     setIsLoading(true)
+    //     signInWithPopup(auth, googleProvider)
+    //         .then(result => {
+    //             const user = result.user
+    //             setError('')
 
-            }).catch((error) => {
+    //         }).catch((error) => {
+    //             setError(error.message);
+    //         }).finally(() => setIsLoading(false));
+    // }
+
+    const googleLogIn = (location, navigate) => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                // console.log(user);
+                // saveUserGoogle(user.email, user.displayName, user.photoURL, "PUT");
+
+                const destination = location.state?.from || "/";
+                navigate(destination);
+                setError("");
+            })
+            .catch((error) => {
                 setError(error.message);
-            });
-    }
+            })
+            .finally(() => setIsLoading(false));
+    };
 
 
-    const logOut = () => {
-        signOut(auth).then(() => {
 
-        }).catch((error) => {
-
-        })
-    }
 
 
     // Obsurber 
@@ -80,11 +121,20 @@ const useFirebase = () => {
 
     }, [auth]);
 
+    const logOut = () => {
+        signOut(auth).then(() => {
+
+        }).catch((error) => {
+
+        })
+    }
+
+
 
 
     return {
         user,
-        signInUsingGoogle,
+        googleLogIn,
         registerUser,
         logOut,
         LogIn,

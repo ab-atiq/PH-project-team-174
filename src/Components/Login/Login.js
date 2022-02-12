@@ -2,12 +2,12 @@ import React from "react";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import useAuth from "../../Context/AuthProvider/useAuth";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const {signInUsingGoogle, LogIn, isLoading, error } = useAuth();
+    const {googleLogIn, LogIn, isLoading, error } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -22,6 +22,9 @@ const Login = () => {
     const LoginFromData = (e) => {
         LogIn(loginData.email, loginData.password,location,navigate)
         e.preventDefault();
+    }
+    const handelGoogleSignIn = () => {
+        googleLogIn(location,navigate);
     }
 
 
@@ -67,7 +70,7 @@ const Login = () => {
                     </div>
                     <div className="col-md-6">
                         <img className="w-100 mt-5" src="https://i.ibb.co/X7HbLJL/green-white-digital-marketing-class-website-1.png" alt="" />
-                        <Button onClick={signInUsingGoogle} className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
+                        <Button onClick={handelGoogleSignIn} className="w-75 mt-3" style={{ backgroundColor: '#198754', color: '#fff' }} variant="" type="submit">
     
                             <i className="fab text-warning fa-google"></i> Login With Google
                         </Button>

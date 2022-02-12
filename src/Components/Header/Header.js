@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 import Navber from './Navber';
 import { useSelector } from 'react-redux';
-import useAuth from '../../Context/AuthProvider/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
               navbarScroll
             >
               <Nav.Link href="#action1"> <i className="fas fa-all fa-user"></i></Nav.Link>
-              <Nav.Link href="#action2"> <span className='fw-bolder text-dark'>Hello, <br /> {user?.displayName }</span></Nav.Link>
+              <Nav.Link href="#action2"> <span className='fw-bolder text-dark'>Hello, <p style={{fontSize:'8px'}}> {user?.displayName }</p> </span></Nav.Link>
               <Nav.Link as={Link} to="/cart" >
                 <i className="fas  fa-all fa-cart-arrow-down"> </i>
               </Nav.Link>

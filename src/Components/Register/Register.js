@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Alert, Button, Form, Spinner } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useAuth from '../../Context/AuthProvider/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 
@@ -23,7 +23,7 @@ const Register = () => {
 
     const RegisterFromData = (e) => {
 
-        registerUser(registerData.email, registerData.password, location ,navigate);
+        registerUser(registerData.email, registerData.password, registerData.name, location ,navigate);
 
         e.preventDefault();
     }
