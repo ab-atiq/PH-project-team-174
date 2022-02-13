@@ -19,6 +19,7 @@ import AddService from "./Components/AddService/AddService";
 import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
 import Checkout from "./Components/Checkout/Checkout";
 import Payment from "./Components/Payment/Payment";
+import Footer from "./Components/Footer/Footer";
 
 
 
@@ -47,6 +48,7 @@ function App() {
             <Route path='food' element={<Food />} />
 
           </Routes>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>
