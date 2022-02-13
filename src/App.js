@@ -36,10 +36,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<PrivetRoute><Cart /></PrivetRoute>} />
             <Route path="/home" element={< Home />} />
-            <Route path="/checkout" element={< Checkout />} />
+            <Route path="/checkout" element={<PrivetRoute>< Checkout /></PrivetRoute>} />
             <Route path="/feature" element={< Feature />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/payment' element={<Payment />} />
+            <Route path='/payment' element={<PrivetRoute><Payment /></PrivetRoute>} />
             <Route path='/addService' element={<AddService />} />
             <Route path='/register' element={<Register />} />
             <Route path="/contact" element={< Contact />} />

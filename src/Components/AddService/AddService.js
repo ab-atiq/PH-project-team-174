@@ -39,7 +39,7 @@ const AddService = () => {
                 <input className='w-75 mt-3 p-2 rounded border-0' type='number' placeholder='Send  your Price' defaultValue="" {...register("price")} />
 
 
-                <input className='w-75  rounded border-0 mt-3 p-2' variant='primary' type="submit" />
+                <input className='w-75 btn btn-success    rounded border-0 mt-3 p-2         text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-green-700 dark:focus:ring-green-800' variant='primary' type="submit" />
                 {errors.exampleRequired && <span>This field is required</span>}
             </form>
         </>

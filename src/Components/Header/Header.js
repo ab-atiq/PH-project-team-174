@@ -52,7 +52,7 @@ const Header = () => {
 
                   <Link to="" onClick={logOut} className="ms-2 my-2 mx-auto"> <span className='fw-bolder text-dark '> <Button variant="success" className='text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-green-700 dark:focus:ring-green-800'>LogOut</Button></span></Link>
                   :
-                  <Link to="/login" className="ms-2 my-2 mx-auto"> <span className='fw-bolder  text-dark'> <Button variant="success" className='mx-auto'>LogIn</Button></span></Link>
+                  <Link to="/login" className="ms-2 my-2 mx-auto"> <span className='fw-bolder  text-dark'> <Button variant="success" className='mx-auto  text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-green-700 dark:focus:ring-green-800'>LogIn</Button></span></Link>
               }
             </Nav>
           </Navbar.Collapse>

@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const NotFound = () => {
     return (
-        <div>
-            <div className="card bg-dark text-white">
-                <img style={{ height: "600px" }} src="https://webdeasy.de/wp-content/uploads/2020/06/404-pages.jpg" className="card-img" alt="..." />
-                <div className="card-img-overlay">
-                    <h2 className="text-danger">Page not found</h2>
-                    <p>Oops! The page you are looking for does not exist. It might have been moved or deleted.</p>
-                    <Link to="/"> <button className="btn btn-danger">Back to Home</button> </Link>
+        <div className='row'>
+            <div className="col-md-12">
+            <h2 className="text-danger fs-1 mt-4"> Oops! Page not found</h2>
+                <img className="w-75" src="https://webdeasy.de/wp-content/uploads/2020/06/404-pages.jpg" className="card-img" alt="..." />
+           
+                <Link to="/"> <button className="btn btn-success mb-5">Back to Home</button> </Link>
+                <div className="card bg-dark text-white col-md-12">
+
+                    <div className="card-img-overlay">
+
+                    </div>
                 </div>
             </div>
         </div>
