@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const NotFound = () => {
     return (
-
-         // this is not found page 
-
-         <div className="bg-light py-5 d-flex flex-column justify-content-center align-items-center">
-         <h1 className="text-center fw-bold" style={{'fontSize': '8rem'}}>404</h1>
-         <p className="text-center fw-light">Page Not found.</p>
-
-         <Link to="/" className="fw-bold text-center" style={{"textDecoration": "none"}}>Back to home</Link>
-     </div>
+        <div>
+            <div className="card bg-dark text-white">
+                <img style={{ height: "600px" }} src="https://webdeasy.de/wp-content/uploads/2020/06/404-pages.jpg" className="card-img" alt="..." />
+                <div className="card-img-overlay">
+                    <h2 className="text-danger">Page not found</h2>
+                    <p>Oops! The page you are looking for does not exist. It might have been moved or deleted.</p>
+                    <Link to="/"> <button className="btn btn-danger">Back to Home</button> </Link>
+                </div>
+            </div>
+        </div>
     );
 };
 

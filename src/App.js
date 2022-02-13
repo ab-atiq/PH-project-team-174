@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header/Header";
 import './App.css';
+import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Supplements from './Comphonents/Supplements/Supplements';
 import Fruits from './Comphonents/Fruits/Fruits';
@@ -19,7 +20,10 @@ import AddService from "./Components/AddService/AddService";
 import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
 import Checkout from "./Components/Checkout/Checkout";
 import Payment from "./Components/Payment/Payment";
-
+import Footer from "./Components/Footer/Footer";
+import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
+import NotFound from "./Components/NotFound/NotFound";
+import Contact from "./Components/Contact/Contact";
 
 
 function App() {
@@ -38,6 +42,7 @@ function App() {
             <Route path='/payment' element={<Payment />} />
             <Route path='/addService' element={<AddService />} />
             <Route path='/register' element={<Register />} />
+            <Route path="/contact" element={< Contact />} />
             <Route path='supplements' element={<Supplements />} />
             <Route path='fruits' element={<Fruits />} />
             <Route path='beverages' element={<Beverages />} />
@@ -45,11 +50,13 @@ function App() {
             <Route path='juice' element={<Juice />} />
             <Route path='meat' element={<Meat />} />
             <Route path='food' element={<Food />} />
-
+            <Route path='review' element={<CoustomerReview />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
-    </div>
+    </div >
   );
 }
 
