@@ -32,7 +32,7 @@ const HeroSection = () => {
           <img
             className="w-100"
             style={{ height: "500px" }}
-            src="https://i.ibb.co/zPhgvSS/Website-Homepage-Fashion-Collage-Banner-1.jpg"
+            src="https://i.ibb.co/8d39tB2/Website-Homepage-Fashion-Collage-Banner.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -46,7 +46,7 @@ const HeroSection = () => {
           <img
             className="w-100"
             style={{ height: "500px" }}
-            src="https://i.ibb.co/8d39tB2/Website-Homepage-Fashion-Collage-Banner.jpg"
+            src="https://i.ibb.co/zPhgvSS/Website-Homepage-Fashion-Collage-Banner-1.jpg"
           />
         </SwiperSlide>
        

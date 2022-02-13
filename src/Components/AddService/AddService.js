@@ -5,11 +5,28 @@ import "./AddService.css";
 const AddService = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
     const onSubmit = data => {
         console.log(data);
+        fetch('http://localhost:5000/addService', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Database Input SuccessFully')
+                    window.location.reload();
+                }
+            })
+
     }
 
-    console.log(watch("example")); // watch input value by passing the name of it
+    // console.log(watch("example")); // watch input value by passing the name of it
 
     return (
         <>
@@ -22,9 +39,8 @@ const AddService = () => {
                 <input className='w-75 mt-3 p-2 rounded border-0' type='number' placeholder='Send  your Price' defaultValue="" {...register("price")} />
 
 
-                {errors.exampleRequired && <span>This field is required</span>}
-
                 <input className='w-75  rounded border-0 mt-3 p-2' variant='primary' type="submit" />
+                {errors.exampleRequired && <span>This field is required</span>}
             </form>
         </>
     );
