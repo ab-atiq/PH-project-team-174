@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import ProductBar from '../ProductBar/ProductBar';
 import SingleProduct from '../SingleProduct/SingleProduct';
-// import allProducts from '../../FakeData/FakeData.json';
-// import './Products.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { addProducts } from '../../redux/cartSlice';
 
 const Products = () => {
-    const [products, setProducts] = useState();
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.cart.products);
+
     useEffect(() => {
-        fetch("./FakeData.json")
+        fetch("http://localhost:5000/product")
             .then(res => res.json())
-            .then(data => setProducts(data));
+            .then(data => dispatch(addProducts(data)))
     }, []);
+    // console.log(products);
     return (
         <div className='container'>
             <ProductBar />
             <h1 className='text-primary'>All Products</h1>
             <div className='products row'>
-                {
-                    products?.map(product => <SingleProduct key={product.id} product={product}></SingleProduct>)
-                }
+                <div className="container">
+                    <div className="row">
+                    {
+                        products.length === 0 ? "Loading..." : 
+                    products?.map(product => <SingleProduct key={product._id} product={product}></SingleProduct>)
+                    } 
+                    </div>
+                </div>
             </div>
         </div>
     );
