@@ -10,7 +10,7 @@ const Beverages = () => {
             .then(data => setProducts(data));
     }, []);
 
-    const filterProduct = products?.filter(product => product.tagName === "BEVERAGES");
+    const filterProduct = products?.filter(product => product.productName === "BEVERAGES");
 
     return (
         <div className='container'>

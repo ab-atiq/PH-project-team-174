@@ -26,6 +26,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import Contact from "./Components/Contact/Contact";
 import Review from "./Components/Review/Review"
 import Makeadmin from "./Components/Makeadmin/Makeadmin";
+import AdminRoute from "./Components/AdminRoute/AdminRoute";
 
 
 function App() {
@@ -42,11 +43,11 @@ function App() {
             <Route path="/feature" element={< Feature />} />
             <Route path='/login' element={<Login />} />
             <Route path='/payment' element={<PrivetRoute><Payment /></PrivetRoute>} />
-            <Route path='/addService' element={<AddService />} />
+            <Route path='/addService' element={<AdminRoute><AddService></AddService></AdminRoute>} />
             <Route path='/register' element={<Register />} />
             <Route path="/contact" element={< Contact />} />
-            <Route path="/review" element={< Review />} />
-            <Route path="/admin" element={< Makeadmin />} />
+            <Route path="/review" element={<AdminRoute>< Review /></AdminRoute>} />
+            <Route path="/admin" element={<AdminRoute>< Makeadmin /></AdminRoute>} />
             <Route path='supplements' element={<Supplements />} />
             <Route path='fruits' element={<Fruits />} />
             <Route path='beverages' element={<Beverages />} />
