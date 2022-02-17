@@ -15,7 +15,7 @@ const Beverages = () => {
     return (
         <div className='container'>
             <ProductBar></ProductBar>
-            <h1>Supplements</h1>
+            <h1 className='fs-2 fw-bolder mt-3 text-success'>Beverages</h1>
             <div className='products row'>
                 {
                     filterProduct?.map(product => <SingleProduct key={product.id} product={product}></SingleProduct>)

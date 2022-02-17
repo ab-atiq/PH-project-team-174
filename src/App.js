@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Components/Header/Header";
 import './App.css';
-// import './App.scss';
+import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Supplements from './Comphonents/Supplements/Supplements';
 import Fruits from './Comphonents/Fruits/Fruits';
