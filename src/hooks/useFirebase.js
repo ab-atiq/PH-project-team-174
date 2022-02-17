@@ -8,7 +8,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     updateProfile,
-  } from "firebase/auth";
+} from "firebase/auth";
 
 import InitializeFirebase from "../Components/Firebase/InitializeFirebase";
 
@@ -20,6 +20,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -31,8 +32,12 @@ const useFirebase = () => {
                 const newUser = { email: email, displayName: name }
                 setUser(newUser)
 
-                // Send name data firebase
+                // Send data from Database Mongodb  
+                // just call function 
+                saveUserDatabase(email, name, 'POST')
 
+
+                // Send name data firebase
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
@@ -71,25 +76,17 @@ const useFirebase = () => {
     };
 
 
-    // const signInUsingGoogle = (location, navigate) => {
-    //     setIsLoading(true)
-    //     signInWithPopup(auth, googleProvider)
-    //         .then(result => {
-    //             const user = result.user
-    //             setError('')
 
-    //         }).catch((error) => {
-    //             setError(error.message);
-    //         }).finally(() => setIsLoading(false));
-    // }
 
     const googleLogIn = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                // console.log(user);
-                // saveUserGoogle(user.email, user.displayName, user.photoURL, "PUT");
+                // send data from Database Mongodb 
+                saveUserDatabase(user.email, user.displayName, 'PUT')
+
+                //correct  location redirect
 
                 const destination = location.state?.from || "/";
                 navigate(destination);
@@ -129,6 +126,32 @@ const useFirebase = () => {
         })
     }
 
+    // Send Data from Database 
+
+    const saveUserDatabase = (email, displayName, method) => {
+        const user = { email, displayName }
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
+
+    // data load from database 
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+
+
+    }, [user?.email])
+
 
 
 
@@ -140,6 +163,7 @@ const useFirebase = () => {
         LogIn,
         isLoading,
         error,
+        admin,
     }
 
 };
