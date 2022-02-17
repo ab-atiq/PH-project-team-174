@@ -41,6 +41,16 @@ const Review = () => {
                             Placeholder="Your Name"
                             {...register("Name")}
                         />
+                        <input
+                            style={{
+                                backgroundColor: "#e7e7e7",
+                                border: "none",
+                                borderRadius: "4px",
+                            }}
+                            className="w-100 my-2 p-2"
+                            Placeholder="Enter Your Online Image link "
+                            {...register("image")}
+                        />
                         <br />
                         <input
                             style={{

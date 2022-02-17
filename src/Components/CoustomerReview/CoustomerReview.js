@@ -55,7 +55,7 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eius!</q>
+            
              <h4>Tom Hanks</h4>
              <h6 style={{color: '#7161ce'}}>Front End Developer</h6>
            </div>
@@ -67,7 +67,6 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://p2.piqsels.com/preview/876/356/902/boy-businessman-close-up-eyes.jpg" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eius!</q>
              <h4>Will Smith</h4>
              <h6 style={{color: '#7161ce'}}>Back End Developer</h6>
            </div>
@@ -79,7 +78,7 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://asset1.modelmanagement.com/mm-eyJ0Ijp7InIiOnsibCI6/IjU1MSIsImgiOiI4MDAi/fX0sImlkIjoiaTcxNTk4/NjgiLCJmIjoianBnIn0;.jpg" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eius!</q>
+            
              <h4>Tim Roxet</h4>
              <h6 style={{color: '#7161ce'}}>UI/UX Developer</h6>
            </div>
@@ -91,9 +90,8 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://i.pinimg.com/736x/29/12/d1/2912d1ba7094c8a9ee48455e3be1b002.jpg" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3"></q>
              <h4>Millie Brown</h4>
-             <h6 style={{color: '#7161ce'}}>Valueable Customer</h6>
+             <h6 style={{color: '#7161ce'}}> Influencer & Rechercher </h6>
            </div>
          </div>
      </SwiperSlide>
@@ -103,9 +101,9 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://asset1.modelmanagement.com/mm-eyJ0Ijp7InIiOiIzMjAi/fSwiaWQiOiJpMTI1OTM1/MiIsImYiOiJqcGcifQ;;.jpg" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eius!</q>
+            
              <h4>Emily Hanlks</h4>
-             <h6 style={{color: '#7161ce'}}>Customer</h6>
+             <h6 style={{color: '#7161ce'}}>Marketing Manager</h6>
            </div>
          </div>
      </SwiperSlide>
@@ -115,9 +113,9 @@ const CoustomerReview = () => {
              <img className='mx-auto' src="https://stylesatlife.com/wp-content/uploads/2021/09/Jennifer-Lawrence-mole-on-face.jpg.webp" alt="" id="customer-img"/>
            </div>
            <div>
-             <q className="fs-normal fw-light text-muted d-block my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eius!</q>
+            
              <h4>Emma Watson</h4>
-             <h6 style={{color: '#7161ce'}}>Customer</h6>
+             <h6 style={{color: '#7161ce'}}> CEO </h6>
            </div>
          </div>
      </SwiperSlide>
