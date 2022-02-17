@@ -123,6 +123,27 @@ const CoustomerReview = () => {
      
      </Swiper>
        </Container>
+       <div className="container">
+            <div class="row">
+                <div class="g-3 d-flex justify-content-start align-items-center text-left col-lg-3 col-md-3 col-sm-6 col-12">
+                <i class="fas fa-shipping-fast"></i>
+                    {/* <FontAwesomeIcon className="icon" icon={faShippingfast} /> */}
+                    <div class="ps-3"><h5 class="my-1">Free Shipping</h5><p class="my-1">Free Shipping Inside Dhaka</p>
+                    </div></div>
+                    <div class="g-3 d-flex justify-content-start align-items-center text-left col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-headset"></i>
+                    <div class="ps-3"><h5 class="my-1">24/7 Support</h5><p class="my-1">Find The Best Range Of Organic Product</p>
+                    </div></div>
+                    <div class="g-3 d-flex justify-content-start align-items-center text-left col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="far fa-credit-card"></i>
+                    <div class="ps-3"><h5 class="my-1">Safe Payment</h5><p class="my-1">Free Shipping When Spent 10000TK</p>
+                    </div></div>
+                    <div class="g-3 d-flex justify-content-start align-items-center text-left col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="ps-3"><h5 class="my-1">Cashback Offers</h5><p class="my-1">Get Cashback On Hot Products</p>
+                        </div></div>
+                </div>
+            </div>
        </>
     );
 };
