@@ -5,7 +5,7 @@ import ReviewService from "./ReviewService";
 const ShowReview = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://polar-shelf-03061.herokuapp.com/userReview")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);
@@ -13,8 +13,8 @@ const ShowReview = () => {
   // console.log(services);
   return (
     <div className="mx-3">
-      <h1 className="text-center mt-5 fw-bolder">Customer Reviews</h1>
-      <h6 className="text-center  fw-bolder mb-5">Customers Happiness</h6>
+      <h1 className="text-center my-5 fw-bolder fs-2">Customer Reviews & Happiness</h1>
+    
 
       <div className="row  mb-5 ">
         {services.map((service) => (
