@@ -24,6 +24,8 @@ import Footer from "./Components/Footer/Footer";
 import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
 import NotFound from "./Components/NotFound/NotFound";
 import Contact from "./Components/Contact/Contact";
+import Review from "./Components/Review/Review"
+import Makeadmin from "./Components/Makeadmin/Makeadmin";
 
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
             <Route path='/addService' element={<AddService />} />
             <Route path='/register' element={<Register />} />
             <Route path="/contact" element={< Contact />} />
+            <Route path="/review" element={< Review />} />
+            <Route path="/admin" element={< Makeadmin />} />
             <Route path='supplements' element={<Supplements />} />
             <Route path='fruits' element={<Fruits />} />
             <Route path='beverages' element={<Beverages />} />
