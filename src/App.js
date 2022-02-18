@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./Components/Header/Header";
 import './App.css';
-import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Supplements from './Comphonents/Supplements/Supplements';
 import Fruits from './Comphonents/Fruits/Fruits';
@@ -24,6 +23,12 @@ import Footer from "./Components/Footer/Footer";
 import CoustomerReview from "./Components/CoustomerReview/CoustomerReview";
 import NotFound from "./Components/NotFound/NotFound";
 import Contact from "./Components/Contact/Contact";
+import Review from "./Components/Review/Review"
+import Makeadmin from "./Components/Makeadmin/Makeadmin";
+import AdminRoute from "./Components/AdminRoute/AdminRoute";
+// import AboutUs from "./Components/AboutUs/AboutUs";
+import Products from "./Comphonents/Products/Products";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 
 function App() {
@@ -36,13 +41,17 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<PrivetRoute><Cart /></PrivetRoute>} />
             <Route path="/home" element={< Home />} />
-            <Route path="/checkout" element={< Checkout />} />
+            <Route path="/checkout" element={<PrivetRoute>< Checkout /></PrivetRoute>} />
             <Route path="/feature" element={< Feature />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/payment' element={<Payment />} />
-            <Route path='/addService' element={<AddService />} />
+            <Route path='/payment' element={<PrivetRoute><Payment /></PrivetRoute>} />
+            <Route path='/addService' element={<AdminRoute><AddService></AddService></AdminRoute>} />
             <Route path='/register' element={<Register />} />
+            <Route path='/product' element={<Products />} />
+            <Route path='/about' element={<AboutUs />} />
             <Route path="/contact" element={< Contact />} />
+            <Route path="/review" element={<AdminRoute>< Review /></AdminRoute>} />
+            <Route path="/admin" element={<AdminRoute>< Makeadmin /></AdminRoute>} />
             <Route path='supplements' element={<Supplements />} />
             <Route path='fruits' element={<Fruits />} />
             <Route path='beverages' element={<Beverages />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
-import useAuth from '../../Context/AuthProvider/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 const AdminRoute = ({children}) => {
 
@@ -14,7 +14,7 @@ const AdminRoute = ({children}) => {
     if (user.email && admin) {
        return children
     }
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/" state={{ from: location }} replace />;
 
 
 

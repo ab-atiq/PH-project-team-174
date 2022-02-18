@@ -16,9 +16,9 @@ const Cart = () => {
 
     return (
         <div style={{overflow: 'scroll'}}>
-            <h2>Cart</h2>
-            <div className='container my-5 mx-auto'>
-                <Table striped bordered hover>
+            <h2 className='fs-2 fw-bolder'>Cart</h2>
+            <div className='container my-5 mx-auto  '>
+                <Table   bordered hover >
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -27,7 +27,7 @@ const Cart = () => {
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
-                            <th></th>
+                            <th>Manage Order</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,8 +35,8 @@ const Cart = () => {
                             cart.length !== 0 ? cart?.map((item, index) => {
                                 return (
                                     <tr key={item._id}>
-                                        <td >{itemNo = itemNo += 1}</td>
-                                        <td>{item.productName}</td>
+                                        <td>{itemNo = itemNo += 1}</td>
+                                        <td  >{item.productName}</td>
                                         <td><img className='img-fluid' src={item.image} alt="" style={{ maxWidth: '70px' }} /></td>
                                         <td>{item.price}</td>
                                         <td>{item.quantity}</td>
@@ -44,7 +44,7 @@ const Cart = () => {
                                         <td><button onClick={() => dispatch(removerFromCart(item._id))} className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Remove</button></td>
                                     </tr>
                                 )
-                            }) : <p>No items in cart</p>
+                            }) : <p className=' fa-2 text-center'>No items in cart</p>
                         }
                         <tr>
                             <td colSpan={4}></td>

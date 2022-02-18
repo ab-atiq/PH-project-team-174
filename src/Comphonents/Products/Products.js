@@ -9,7 +9,7 @@ const Products = () => {
     const products = useSelector(state => state.cart.products);
 
     useEffect(() => {
-        fetch("http://localhost:5000/product")
+        fetch("https://safe-cliffs-35352.herokuapp.com/product")
             .then(res => res.json())
             .then(data => dispatch(addProducts(data)))
     }, []);
@@ -17,14 +17,14 @@ const Products = () => {
     return (
         <div className='container'>
             <ProductBar />
-            <h1 className='text-primary'>All Products</h1>
+            <h1 className='text-primary fs-2 fw-bolder mt-3 text-success'>All Products</h1>
             <div className='products row'>
                 <div className="container">
                     <div className="row">
-                    {
-                        products.length === 0 ? "Loading..." : 
-                    products?.map(product => <SingleProduct key={product._id} product={product}></SingleProduct>)
-                    } 
+                        {
+                            products.length === 0 ? "Loading..." :
+                                products?.map(product => <SingleProduct key={product._id} product={product}></SingleProduct>)
+                        }
                     </div>
                 </div>
             </div>
