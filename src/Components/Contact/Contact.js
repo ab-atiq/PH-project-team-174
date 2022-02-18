@@ -35,7 +35,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="col-md-6">
-                    <section class="contact" id="contact">
+                        <section class="contact" id="contact">
                             <div class="max-width">
                                 <div class="contact-content">
 
@@ -62,15 +62,15 @@ const Contact = () => {
                                         </form>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                         </section>
                     </div>
-                  
+
                 </div>
             </div>
-           
+
         </div>
     );
 };
