@@ -27,6 +27,8 @@ import Contact from "./Components/Contact/Contact";
 import Review from "./Components/Review/Review"
 import Makeadmin from "./Components/Makeadmin/Makeadmin";
 import AdminRoute from "./Components/AdminRoute/AdminRoute";
+import AboutUs from "./Components/AboutUs/AboutUs";
+import Products from "./Comphonents/Products/Products";
 
 
 function App() {
@@ -45,6 +47,8 @@ function App() {
             <Route path='/payment' element={<PrivetRoute><Payment /></PrivetRoute>} />
             <Route path='/addService' element={<AdminRoute><AddService></AddService></AdminRoute>} />
             <Route path='/register' element={<Register />} />
+            <Route path='/product' element={<Products />} />
+            <Route path='/about' element={<AboutUs />} />
             <Route path="/contact" element={< Contact />} />
             <Route path="/review" element={<AdminRoute>< Review /></AdminRoute>} />
             <Route path="/admin" element={<AdminRoute>< Makeadmin /></AdminRoute>} />

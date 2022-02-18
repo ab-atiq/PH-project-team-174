@@ -14,14 +14,11 @@ const Contact = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      style={{ height: '400px'}}
-      src="https://www.hubspot.com/hubfs/Contact%20Us/portsmouth.jpg"
+      style={{ height: '500px'}}
+      src="https://freedesignfile.com/upload/2020/07/Online-Shopping-Banner-Mobile-App-Vector.jpg"
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>Get in touch</h3>
-      <p>Want to get in touch? We'd love to hear from you. Here's how you can reach us...</p>
-    </Carousel.Caption>
+   
   </Carousel.Item>
 </Carousel>
          </div>
@@ -44,8 +41,8 @@ const Contact = () => {
         <div class="max-width">
             <div class="contact-content">
               
-                <div class="column right">
-                    <div class="text text-center">---Contact with us---</div>
+                <div class="column right mx-auto">
+                    <div class="text text-center fs-2 mb-4 fw-bolder">---Contact with us---</div>
                     <form class="contact-form" action="https://formspree.io/f/xbjwrkwj" method="POST">
                         <div class="fields">
                             <div class="field name">
@@ -62,7 +59,7 @@ const Contact = () => {
                             <textarea name="message" class="message" cols="30" rows="10" placeholder="Message.."></textarea>
                         </div>
                         <div class="button-area">
-                            <button class="send-msg" type="submit" name="send">Send message</button>
+                            <button class="send-msg mx-auto " type="submit" name="send">Send message</button>
                         </div>
                     </form>
                 </div>
