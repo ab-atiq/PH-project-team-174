@@ -7,7 +7,7 @@ const Makeadmin = () => {
 
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://safe-cliffs-35352.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

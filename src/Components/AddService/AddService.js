@@ -8,7 +8,7 @@ const AddService = () => {
 
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/addService', {
+        fetch('https://safe-cliffs-35352.herokuapp.com/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

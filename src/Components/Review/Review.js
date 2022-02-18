@@ -7,7 +7,7 @@ const Review = () => {
 
     const onSubmit = (data) => {
         axios
-            .post("http://localhost:5000/addReview", data)
+            .post("https://safe-cliffs-35352.herokuapp.com/addReview", data)
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("added Successfully");
