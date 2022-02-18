@@ -9,7 +9,7 @@ const Navber = () => {
         <Container>
           <Nav className="me-auto  mx-auto ">
             <Link style={{ color: 'green' }} className=' text-decoration-none py-2 fw-bolder' to="/home">Home</Link>
-            <Link style={{ color: 'green' }} className='ms-3 text-decoration-none py-2 fw-bolder' to="/feature">Features</Link>
+            <Link style={{ color: 'green' }} className='ms-3 text-decoration-none py-2 fw-bolder' to="/product">Product</Link>
             <Link style={{ color: 'green' }} className='ms-3 text-decoration-none py-2 fw-bolder' to="/about">About Us</Link>
             <Link style={{ color: 'green' }} className='ms-3 text-decoration-none py-2 fw-bolder' to="/contact">Contact Us</Link>
           </Nav>

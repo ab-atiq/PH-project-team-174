@@ -5,8 +5,8 @@ import './ProductBar.css';
 
 const ProductBar = () => {
     return (
-        <nav className='navbar justify-content-around bg-primary rounded mt-3'>
-            <Link className='text-white' to='/supplements'><button className='btn text-white'>Supplements</button></Link>{' '}
+        <nav className='navbar justify-content-around bg-success rounded mt-3 fw-bolder'>
+            <Link className='text-white ' to='/supplements'><button className='btn text-white'>Supplements</button></Link>{' '}
             <Link className='text-white' to='/fruits'><button className='btn text-white'>Fruits</button></Link>{' '}
             <Link className='text-white' to='/beverages'><button className='btn text-white'>Beverages</button></Link>{' '}
             <Link className='text-white' to='/dried'><button className='btn text-white'>Dried</button></Link>{' '}
