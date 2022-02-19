@@ -26,8 +26,9 @@ import Contact from "./Components/Contact/Contact";
 import Review from "./Components/Review/Review"
 import Makeadmin from "./Components/Makeadmin/Makeadmin";
 import AdminRoute from "./Components/AdminRoute/AdminRoute";
-import AboutUs from "./Components/AboutUs/AboutUs";
+// import AboutUs from "./Components/AboutUs/AboutUs";
 import Products from "./Comphonents/Products/Products";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 
 function App() {
